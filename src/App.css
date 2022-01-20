@@ -1,38 +1,76 @@
-.App {
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+
+body {
+  color: #222;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 200;
+  margin: 0 50px;
+}
+
+.react-draggable,
+.cursor {
+  cursor: move;
+}
+.no-cursor {
+  cursor: auto;
+}
+.cursor-y {
+  cursor: ns-resize;
+}
+.cursor-x {
+  cursor: ew-resize;
+}
+
+.react-draggable strong {
+  background: #ddd;
+  border: 1px solid #999;
+  border-radius: 3px;
+  display: block;
+  margin-bottom: 10px;
+  padding: 3px 5px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.box {
+  background: white;
+  border: 1px solid #999;
+  border-radius: 3px;
+  width: 180px;
+  height: 180px;
+  margin: 10px;
+  padding: 10px;
+  float: left;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/*
+ * RemWrapper needs to take it's styles from this element,
+ * and this element can't have an absolute position after it's kicked in.
+ * AFAIK it's not possible to do this directly in the RemWrapper component.
+ */
+.rem-position-fix {
+  position: static !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.canvasFrame {
+  border: 1px solid #999;
+  height: 432px;
+  width: 768px;
+  position: relative;
+  overflow: auto;
+  padding: 0;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.canvasFrame-2 {
+  border: 1px solid #999;
+  height: 768px;
+  width: 432px;
+  position: relative;
+  overflow: auto;
+  padding: 0;
 }
